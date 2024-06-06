@@ -18,18 +18,28 @@
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
 
-            <!-- Page Content -->
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    ChatGPT Lite
+                </div>
+            </header>
             <main>
-                {{ $slot }}
+                <div class="flex h-screen">
+                    <div class="w-1/6 border-r-4 border-black flex flex-col">
+                        <a href="{{ url('/chat') }}" class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white border border-gray-300 rounded-lg mx-5 my-2 text-center">
+                            Nouvelle discussion
+                        </a>
+                        <div class="mt-4">
+                            Anciennes conversations:
+                        </div>
+                    </div>
+                
+                    <div>
+                        {{ $slot }}
+                    </div>     
+                </div>          
+                
             </main>
         </div>
     </body>
